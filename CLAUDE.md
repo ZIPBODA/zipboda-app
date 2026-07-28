@@ -6,8 +6,9 @@
 - **React Native + Expo(Dev Client) + expo-router** + TypeScript, **Feature-Sliced Design**
 - 서버 상태 TanStack Query, 응답 엔벌로프 `{success, data, error}`
 - 3D: **expo-gl + three.js**(WebView 미사용), glTF/GLB, 터치 제스처
+- 스타일링: **NativeWind(Tailwind)** — `@zipboda/tokens/tailwind` preset(raw) + `@zipboda/ui-core` 클래스 헬퍼(`buttonClasses` 등)를 RN 프리미티브에 `className`으로 적용(web/admin과 동일 클래스). `@zipboda/ui`(DOM)는 미사용
 - 푸시: expo-notifications(FCM/APNs). 배포: EAS Build/Submit
-- 공유: pnpm workspace `@zipboda/shared`(zipboda-web과 API 타입·훅 공유)
+- 공유: `@zipboda/tokens`·`@zipboda/ui-core`(디자인시스템, GitHub Packages) + `@zipboda/shared`(API 타입·훅)
 
 ## 산출물 단일 진실원
 요구사항/화면/API xlsx 3종은 **zipboda-web/docs에서 대표 관리**. 본 저장소는 개발계획서(md)만 보유. 스펙 참조 시 `../zipboda-web/docs/` 사용.
@@ -16,6 +17,7 @@
 @.claude/rules/frontend-rule.md
 @.claude/rules/frontend-architecture.md
 @.claude/rules/code-organization.md
+@.claude/rules/figma-implementation-rule.md
 @.claude/rules/contributing-role.md
 @.claude/rules/document-template-rule.md
 @.claude/rules/phase-review-rule.md

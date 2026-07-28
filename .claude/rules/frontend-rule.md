@@ -143,13 +143,13 @@
 
 | ID | 슬롯 | 값 |
 |----|------|-----|
-| P1 | 대상 스택 | **React Native + Expo(Dev Client) + expo-router** / TypeScript / Metro / 디자인토큰 테마 / TanStack Query+전역스토어 / fetch / 3D: expo-gl+three.js |
+| P1 | 대상 스택 | **React Native + Expo(Dev Client) + expo-router** / TypeScript / Metro / **NativeWind(Tailwind)** / TanStack Query+전역스토어 / fetch / 3D: expo-gl+three.js |
 | P2 | 범위 | 활성 `src/**/*.{ts,tsx}` · 비활성 `dist/`·`build/`·`.next/`·`.expo/` |
 | P3 | 빌드·렌더 모드 | 네이티브(RN) 렌더 — SSR 없음. Expo Dev Client(bare 확장 가능), 저사양 3D 폴백·오프라인 대응 인지 |
 | P4 | 경로 별칭 | `@/*` (내부) · `@zipboda/shared` (web·app 공유 패키지) |
 | P5 | 프레임워크 관용구 | expo-router · `React.lazy`+`<Suspense>` · `react-hooks/exhaustive-deps` · 함수형 컴포넌트만 · 3D는 터치 제스처 처리 |
 | P6 | 상태 관리 | 전역 스토어 + URL 쿼리 파라미터 · props drilling 3단계 초과 시 분리 |
-| P7 | 디자인 토큰 | brand `#FFBA17` · neutral `#111111~#F3F4F6` · semantic 정보 `#2B7FFF`/성공 `#00BC7D`/경고 `#F59E0B`/오류 `#FF6467` · social Kakao `#FEE500`/Naver `#03C75A` · Inter+한글, weight 400–900 · 임의 hex/arbitrary spacing 금지 |
+| P7 | 디자인 토큰 | brand `#FFBA17` · neutral `#111111~#F3F4F6` · semantic 정보 `#2B7FFF`/성공 `#00BC7D`/경고 `#F59E0B`/오류 `#FF6467` · social Kakao `#FEE500`/Naver `#03C75A` · Pretendard, weight 400–900 · **토큰/컴포넌트는 `@zipboda/tokens/tailwind` preset + `@zipboda/ui-core` 클래스 헬퍼(NativeWind)로 소비** · 임의 hex/arbitrary spacing 금지 |
 | P8 | 공용 컴포넌트 | `shared/ui` (Button/Input/Badge/Modal/Table/Tabs/EmptyState 등) — 인라인 재구현 금지 |
 | P9 | 차트 | N/A(모바일 차트 필요 시 단일 라이브러리) |
 | P10 | 투명도 정책 | 배경 불투명 원칙(투명도는 사용자 명시 지시 시) |

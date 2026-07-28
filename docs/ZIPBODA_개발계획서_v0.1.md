@@ -47,11 +47,15 @@ LH·SH·GH·IH 공공 청약 정보 + 평면도(2D)·**WebGL 3D(1·3인칭 집�
 | 푸시 | **expo-notifications + FCM(Android)/APNs(iOS)** | 마감임박·구독 알림(REQ-US-004) |
 | 빌드/배포 | **EAS Build/Submit**, 스토어(App Store/Play) 심사 파이프라인 | 검토 app-Major(스토어 배포 부재) |
 | 서버 상태 | TanStack Query(응답 `{success,data,error}` 소비) | — |
-| 공유 코드 | **pnpm workspace `@zipboda/shared`** (web과 API 타입·훅 공유) | 검토 app-Minor(공유 메커니즘) |
+| 스타일링 | **NativeWind(Tailwind) + `@zipboda/tokens/tailwind` preset + `@zipboda/ui-core` 클래스 헬퍼** | web/admin과 **동일 preset·동일 클래스로 통일** |
+| 공유 코드 | **`@zipboda/tokens`·`@zipboda/ui-core`**(디자인시스템, GitHub Packages), `@zipboda/shared`(API 타입·훅) | 검토 app-Minor(공유 메커니즘) |
 | 오프라인 | 캐시(AsyncStorage)+재시도 큐 | REQ-NF, 네트워크 불안정 |
 
-### 3.1 디자인시스템 토큰(Figma)
-Brand `#FFBA17` / Neutral `#1A1A1A`~`#F3F4F6` / Semantic(정보 `#2B7FFF`·성공 `#00BC7D`·경고 `#F59E0B`·오류 `#FF6467`) / Social(Kakao `#FEE500`·Naver `#03C75A`) / Inter+한글 400–900. web과 동일 토큰을 앱 테마로 매핑.
+### 3.1 디자인시스템 토큰(Figma) — NativeWind 통일
+Brand `#FFBA17` / Neutral `#1A1A1A`~`#F3F4F6` / Semantic(정보 `#2B7FFF`·성공 `#00BC7D`·경고 `#F59E0B`·오류 `#FF6467`) / Social(Kakao `#FEE500`·Naver `#03C75A`) / Pretendard.
+- **NativeWind로 통일**: `tailwind.config`에 `nativewind/preset` + `@zipboda/tokens/tailwind`(raw 값) 적용, `content`에 `@zipboda/ui-core/dist` 포함.
+- 컴포넌트는 `@zipboda/ui`(DOM) 대신 **RN 프리미티브 + `@zipboda/ui-core` 클래스 헬퍼(`buttonClasses()` 등)** 로 구현 → web/admin과 클래스 문자열 일치.
+- preset이 raw 값이라 CSS 파일 미로드 환경(RN)에서도 동작. `hover:`는 무시, `active:`는 Pressable에서 동작.
 
 ### 3.2 WebGL 3D(집구경) — 앱
 ZB-U-PLAN-04를 expo-gl+three.js로 구현. 자산 메타 API-032 로딩, 1·3인칭 전환(ITF-013), **터치 제스처(드래그 회전·핀치 줌·이동)**, 저사양 2D 폴백(ZB-U-PLAN-03), 목표 30fps(REQ-NF-003).
