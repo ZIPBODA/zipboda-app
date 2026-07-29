@@ -5,7 +5,7 @@
 | 항목 | 내용 |
 |------|------|
 | 문서명 | 집보다(Zipboda) App(모바일 앱) 개발계획서 |
-| 버전 | v1.1.0 |
+| 버전 | v1.2.0 |
 | 작성일 | 2026-07-27 |
 | 기반 문서 | ../zipboda-web/docs/ZIPBODA_요구사항정의서_v0.1.xlsx, ../zipboda-web/docs/ZIPBODA_화면설계서_v0.1.xlsx, ../zipboda-web/docs/ZIPBODA_API 및 인터페이스 정의서_v0.1.xlsx (xlsx 3종은 zipboda-web 대표 관리) |
 
@@ -15,6 +15,7 @@
 |------|------|--------|-----------|
 | v0.1.0 | 2026-07-27 | Claude | 신규 작성 — app 전용 WBS·Phase·추적 매트릭스 |
 | v1.1.0 | 2026-07-27 | Claude | 검토 반영 — 통합 로드맵, 3D/Expo 워크플로우/푸시/스토어 배포 결정, 일정·공수·오너, 수치형 수용 기준, xlsx 대표 관리(경로 갱신) |
+| v1.2.0 | 2026-07-29 | Claude | 파일명 정비 — 개발계획서 파일명 영문화(ZIPBODA_development-plan_v0.1.md), .claude/rules 규칙 파일 .rule.md 접미 통일 및 참조 경로 갱신 |
 
 ---
 
@@ -144,6 +145,6 @@ ZB-U-PLAN-04를 expo-gl+three.js로 구현. 자산 메타 API-032 로딩, 1·3�
 | RA4 | web와 로직 중복 | 중 | 중 | Med | 아키텍트 | 중복 코드 증가 | `@zipboda/shared` 공유(성급한 공통화 지양) |
 
 ## 10. 검증 & 검토 반영 이력
-1. Phase 검토 phase-review-rule.md 준수·기록. 2. CI 강제·회귀 누적. 3. 화면ID·API ID가 대표 xlsx와 일치. 4. A1~A4 준수. 5. 비기능: 30fps·터치타겟≥44pt·접근성(S7).
+1. Phase 검토 phase-review.rule.md 준수·기록. 2. CI 강제·회귀 누적. 3. 화면ID·API ID가 대표 xlsx와 일치. 4. A1~A4 준수. 5. 비기능: 30fps·터치타겟≥44pt·접근성(S7).
 
 **검토 반영:** C1~C5, app-Major(3D/Expo/푸시/스토어 결정), app-Minor(공유 메커니즘·오프라인 작업화), 문서간 C3(통합 로드맵·xlsx 대표 관리 경로).
