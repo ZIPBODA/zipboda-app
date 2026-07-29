@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "집보다",
+    "slug": "zipboda-app",
+    "scheme": "zipboda",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": false,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.zipboda.app"
+    },
+    "android": {
+      "package": "com.zipboda.app"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
